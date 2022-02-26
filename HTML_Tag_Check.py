@@ -1,34 +1,34 @@
-"""The list class contains functions that define the structure data in a list """
+"""The stack class contains functions that define the structure data in a list """
 
 
-class List:
+class Stack:
     """
-    function to create an empty list
+    function to create an empty stack
     """
 
     def __init__(self):
         self.items = []
 
     """
-    function to check if there is an item in the list
+    function to check if there is an item in the stack
     """
 
     def isEmpty(self):
         return self.items == []
 
     """
-    function to insert a new item into a list
+    function to insert a new item into a stack
     """
 
     def append(self, item):
         self.items.insert(0, item)
 
     """
-    function to delete item from a list
+    function to delete item from a stack
     """
 
     def pop(self):
-        return self.items.pop(0)
+        return self.items.pop()
 
 
 """
@@ -62,15 +62,15 @@ def split_htmlFile(html_file):
 
 
 """
-function to check tags in a list if they already exist in a dictionary
+function to check tags in a a stack if they already exist in a dictionary
 """
 
 
 def check_tag_of(tag_returned):
-    tag_list = List()
+    tag_list = Stack()
     valid = True
     for tag in tag_returned:
-        # iterate over items in the list that was extract from the html file
+        # iterate over items in the stack that was extract from the html file
         valid = True
         if tag[0] == "<" and tag[1] != "/":
             tag_list.append(tag)
@@ -89,7 +89,7 @@ def check_tag_of(tag_returned):
         else:
             pass
 
-    # checks if the list was empty
+    # checks if the stack was empty
     if tag_list.isEmpty() and valid:
         if len(tag_returned) != 0:
             item = tag_returned[0]
@@ -111,7 +111,7 @@ def check_tag_of(tag_returned):
 
 
 """
-function to mach tags in a list and tags in a dictionary
+function to mach tags in a stack and tags in a dictionary
  """
 
 
